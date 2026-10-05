@@ -23,25 +23,35 @@
 - `resources/views/`: Blade şablonları
 
 ## Kurulum
-1. `git clone https://github.com/hb1253040-ctrl/urun-aciklama-ai.git`
-2. `cd urun-aciklama-ai`
-3. `composer install`
-4. `npm install`
+1. Repoyu indir: `git clone https://github.com/hb1253040-ctrl/urun-aciklama-ai.git`
+2. Klasöre gir: `cd urun-aciklama-ai`
+3. PHP bağımlılıklarını kur: `composer install`
+4. JavaScript bağımlılıklarını kur: `npm install`
 5. `.env.example` dosyasını `.env` olarak kopyala
-6. `php artisan key:generate`
-7. `.env` dosyasına kendi API anahtarını ekle:
+6. Uygulama anahtarını oluştur: `php artisan key:generate`
+
+### API anahtarı
+`.env` dosyasının sonuna şunları ekle:
+
 ```
-   ANTHROPIC_API_KEY=anahtarin
-   ANTHROPIC_MODEL=claude-haiku-4-5-20251001
+ANTHROPIC_API_KEY=anahtarin
+ANTHROPIC_MODEL=claude-haiku-4-5-20251001
 ```
-8. İki ayrı terminalde çalıştır:
-```
-   php artisan serve
-   npm run dev
-```
-9. Tarayıcıda `http://127.0.0.1:8000` adresini aç
 
 API anahtarı console.anthropic.com adresinden alınır. Kullanım ücretlidir.
+
+### Çalıştırma
+İki ayrı terminalde sırayla çalıştır:
+
+```
+php artisan serve
+```
+
+```
+npm run dev
+```
+
+Sonra tarayıcıda `http://127.0.0.1:8000` adresini aç.
 
 ## Notlar
 - API anahtarı `.env` dosyasında tutulur ve repoya eklenmez.
